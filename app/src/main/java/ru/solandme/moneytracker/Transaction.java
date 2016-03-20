@@ -1,14 +1,15 @@
 package ru.solandme.moneytracker;
 
 
+import java.util.Date;
 
-public class Transactions {
+public class Transaction {
 
     private String title;
     private int sum;
-    private String date;
+    private Date date;
 
-    public Transactions(String title, int sum, String date) {
+    public Transaction(String title, int sum, Date date) {
         this.title = title;
         this.sum = sum;
         this.date = date;
@@ -30,11 +31,11 @@ public class Transactions {
         this.sum = sum;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }

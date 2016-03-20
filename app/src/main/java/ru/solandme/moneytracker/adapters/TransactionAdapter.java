@@ -8,20 +8,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import java.text.DateFormat;
 import java.util.List;
 
 import ru.solandme.moneytracker.R;
-import ru.solandme.moneytracker.Transactions;
+import ru.solandme.moneytracker.Transaction;
 
-public class TransactionAdapter extends ArrayAdapter<Transactions>{
-    public TransactionAdapter(Context context, int resource, List<Transactions> transactions) {
+public class TransactionAdapter extends ArrayAdapter<Transaction>{
+    public TransactionAdapter(Context context, int resource, List<Transaction> transactions) {
         super(context, resource, transactions);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        Transactions transactions = getItem(position);
+        Transaction transactions = getItem(position);
 
         if (convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
@@ -33,7 +34,10 @@ public class TransactionAdapter extends ArrayAdapter<Transactions>{
 
         title.setText(transactions.getTitle());
         sum.setText(Integer.toString(transactions.getSum()));
-        data.setText(transactions.getDate());
+
+
+        String dateInStringFormat = DateFormat.getDateInstance().format(transactions.getDate());
+        data.setText(dateInStringFormat);
 
         if(position % 2 == 0){
             convertView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.listBg));

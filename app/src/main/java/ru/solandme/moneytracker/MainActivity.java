@@ -4,9 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private TransactionAdapter transactionAdapter;
 
-    List<Transactions> data = new ArrayList<>();
+    List<Transaction> data = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private List<Transactions> getDataList(){
+    private List<Transaction> getDataList(){
 
-
-        Calendar calendar = Calendar.getInstance();
-
-        String currentDate = DateFormat.getDateInstance().format(new Date(calendar.getTimeInMillis()));
-
-
-        data.add(new Transactions("Food", 1000, currentDate));
-        data.add(new Transactions("T-Shirts", 2000, currentDate));
-        data.add(new Transactions("Jeans", 3300, currentDate));
+        data.add(new Transaction("Food", 1000, new Date(115, 10, 23)));
+        data.add(new Transaction("T-Shirts", 2000, new Date(115, 11, 1)));
+        data.add(new Transaction("Jeans", 3300, new Date(115, 4, 13)));
 
         return data;
     }
