@@ -22,10 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView = (ListView) findViewById(R.id.list_view);
-
         transactionAdapter = new TransactionAdapter(getApplicationContext(), 0, getDataList());
-
+        listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(transactionAdapter);
 
 
