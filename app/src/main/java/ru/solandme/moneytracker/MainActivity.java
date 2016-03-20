@@ -24,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
         transactionAdapter = new TransactionAdapter(getApplicationContext(), 0, getDataList());
         listView = (ListView) findViewById(R.id.list_view);
-        listView.setAdapter(transactionAdapter);
+        if (listView != null) {
+            listView.setAdapter(transactionAdapter);
+        }
 
 
     }
