@@ -4,15 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Data"
-        android:id="@+id/data"
-        android:textColor="@android:color/black"
-        android:padding="8dp"/>
-
-
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -21,22 +12,40 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="80"
-            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:layout_height="match_parent"
             android:text="Title"
             android:id="@+id/title"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
             android:textColor="@android:color/black"
             android:padding="8dp"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="20"
+        <LinearLayout
             android:layout_height="wrap_content"
-            android:text="10000"
-            android:id="@+id/sum"
-            android:gravity="end"
-            android:padding="8dp"
-            android:textColor="@android:color/black"/>
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="30">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10000"
+                android:id="@+id/sum"
+                android:padding="8dp"
+                android:gravity="end"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data"
+                android:id="@+id/data"
+                android:gravity="end"
+                android:textColor="@android:color/black"
+                android:padding="8dp"/>
+        </LinearLayout>
 
     </LinearLayout>
 
