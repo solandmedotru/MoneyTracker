@@ -4,7 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import ru.solandme.moneytracker.adapters.TransactionAdapter;
@@ -31,9 +34,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private List<Transactions> getDataList(){
-        data.add(new Transactions("Food", "1000"));
-        data.add(new Transactions("T-Shirts", "2000"));
-        data.add(new Transactions("Jeans", "3300"));
+
+
+        Calendar calendar = Calendar.getInstance();
+
+        String currentDate = DateFormat.getDateInstance().format(new Date(calendar.getTimeInMillis()));
+
+
+        data.add(new Transactions("Food", 1000, currentDate));
+        data.add(new Transactions("T-Shirts", 2000, currentDate));
+        data.add(new Transactions("Jeans", 3300, currentDate));
 
         return data;
     }

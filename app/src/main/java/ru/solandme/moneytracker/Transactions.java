@@ -1,14 +1,17 @@
 package ru.solandme.moneytracker;
 
 
+
 public class Transactions {
 
     private String title;
-    private String sum;
+    private int sum;
+    private String date;
 
-    public Transactions(String title, String sum) {
+    public Transactions(String title, int sum, String date) {
         this.title = title;
         this.sum = sum;
+        this.date = date;
     }
 
     public String getTitle() {
@@ -19,11 +22,21 @@ public class Transactions {
         this.title = title;
     }
 
-    public String getSum() {
+    public int getSum() {
         return sum;
     }
 
-    public void setSum(String sum) {
+    public void setSum(int sum) {
         this.sum = sum;
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 }
+
+

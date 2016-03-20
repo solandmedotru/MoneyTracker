@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="8dp"
-    android:paddingTop="8dp">
+    android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="0dp"
-        android:layout_weight="80"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title"
-        android:id="@+id/title"/>
+        android:text="Data"
+        android:id="@+id/data"
+        android:textColor="@android:color/black"
+        android:padding="8dp"/>
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_weight="20"
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="10000"
-        android:id="@+id/sum"
-        android:gravity="end"/>
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="80"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:id="@+id/title"
+            android:textColor="@android:color/black"
+            android:padding="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="20"
+            android:layout_height="wrap_content"
+            android:text="10000"
+            android:id="@+id/sum"
+            android:gravity="end"
+            android:padding="8dp"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
 
 </LinearLayout>
