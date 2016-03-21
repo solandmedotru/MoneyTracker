@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import ru.solandme.moneytracker.fragments.CategoryFragment;
 import ru.solandme.moneytracker.fragments.TransactionsFragment;
 
 
@@ -68,6 +69,13 @@ public class MainActivity extends AppCompatActivity {
                     drawerLayout.closeDrawer(left_drawer);
                     setTitle("Траты");
                     getFragmentManager().beginTransaction().replace(R.id.content_frame, new TransactionsFragment()).commit();
+                    break;
+                case 1:
+                    left_drawer.setItemChecked(position, true);
+                    drawerLayout.closeDrawer(left_drawer);
+                    setTitle("Категории");
+                    getFragmentManager().beginTransaction().replace(R.id.content_frame, new CategoryFragment()).commit();
+                    break;
 
             }
         }
