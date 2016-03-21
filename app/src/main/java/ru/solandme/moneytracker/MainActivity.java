@@ -1,5 +1,7 @@
 package ru.solandme.moneytracker;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v4.widget.DrawerLayout;
@@ -63,21 +65,28 @@ public class MainActivity extends AppCompatActivity {
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            left_drawer.setItemChecked(position, true);
+            drawerLayout.closeDrawer(left_drawer);
             switch (position) {
                 case 0:
-                    left_drawer.setItemChecked(position, true);
-                    drawerLayout.closeDrawer(left_drawer);
                     setTitle("Траты");
-                    getFragmentManager().beginTransaction().replace(R.id.content_frame, new TransactionsFragment()).commit();
+                    setFragment(new TransactionsFragment());
                     break;
                 case 1:
-                    left_drawer.setItemChecked(position, true);
-                    drawerLayout.closeDrawer(left_drawer);
                     setTitle("Категории");
-                    getFragmentManager().beginTransaction().replace(R.id.content_frame, new CategoryFragment()).commit();
+                    setFragment(new CategoryFragment());
                     break;
-
             }
+        }
+    }
+
+    private void setFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getFragmentManager();
+        if (fragment != null && fragmentManager.findFragmentById(fragment.getId()) == null) {
+            fragmentManager
+                    .beginTransaction()
+                    .replace(R.id.content_frame, fragment)
+                    .commit();
         }
     }
 }
